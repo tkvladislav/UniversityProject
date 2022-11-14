@@ -158,6 +158,7 @@
     <ClCompile Include="Faculty.cpp" />
     <ClCompile Include="Group.cpp" />
     <ClCompile Include="Human.cpp" />
+    <ClCompile Include="Journal.cpp" />
     <ClCompile Include="MAIN.cpp" />
     <ClCompile Include="Lecturer.cpp" />
     <ClCompile Include="Student.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Faculty.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Human.h" />
+    <ClInclude Include="Journal.h" />
     <ClInclude Include="Lecturer.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Stud_Zaochnik.h" />

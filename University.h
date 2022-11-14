@@ -8,9 +8,9 @@ class Faculty;
 class University
 {
 private:
-	int StudNumber;
-	int LectNumber;
-	int FacultyNumber;
+	int StudNumber = 2000;
+	int LectNumber = 100;
+	int FacultyNumber = 10;
 	Faculty* facultyArray[5];
 	int count = 0;
 protected:
@@ -28,6 +28,23 @@ public:
 	void AddFaculty(Faculty &faculty) {
 		facultyArray[count] = &faculty; 
 		count++;
+	}
+
+	University operator += (int freshers) {
+		this->StudNumber += freshers;
+		cout << "Total number of students: " << this->StudNumber << endl;
+		return (*this);
+	}
+
+	University operator -= (int deducted) {
+		this->StudNumber -= deducted;
+		cout << "Total number of students: " << this->StudNumber << endl;
+		return (*this);
+	}
+
+	template <typename T> T EntryToUniver(T x, T y)
+	{
+		return (x > y) ? x : y;
 	}
 };
 

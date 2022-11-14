@@ -1,5 +1,6 @@
 #include "Faculty.h"
 #include <fstream>
+#include <string>
 
 Faculty::Faculty(string name) {
 	this->facultyName = name;
@@ -23,18 +24,6 @@ void Faculty::Add(Student &student) {
 	File.close();
 }
 
-void Faculty::PrintLecturers() {
-	for (auto i : this->lecturersArray) {
-		cout << "Name: " << i.getName() << endl;
-	}
-}
-
-void Faculty::PrintStudents() {
-	for (auto i : this->studentsArray) {
-		cout << i.getName() << endl;
-	}
-}
-
 string Faculty::getName() {
 	return this->facultyName;
 }
@@ -43,11 +32,23 @@ void Faculty::ShowDeductedStudents() {
 	cout <<"\nDeducted students: " << endl;
 	string read;
 	if (facultyName == "IT") {
-		ifstream File("deduction_list.txt");
+		/*ifstream File("deduction_list.txt");
 		while (getline(File, read)) {
 			cout << read << endl;
 		}
-		File.close();
+		File.close();*/
+		try {
+			char buff[1000];
+			ifstream myfile("test.txt");
+			while (!myfile.eof())
+			{
+				myfile.getline(buff, 200);
+				cout << read << endl;
+			}
+		}
+		catch (...) {
+			cout << "There was an error !\n";
+		}
 	}
 	
 	if (facultyName == "Psychology") {

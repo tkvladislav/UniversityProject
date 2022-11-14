@@ -39,10 +39,6 @@ void Lecturer::PrintInfo() {
 	cout << "Faculty: " << this->facultyName << endl;
 }
 
-void Lecturer::StudentsList(Faculty &faculty) {
-	faculty.PrintStudents();
-}
-
 void Lecturer::SetMark(Student& student, Exam &exam, int mark) {
 	exam.setMark(mark);
 	student.marks[student.Number_mark] = exam.getMark();
