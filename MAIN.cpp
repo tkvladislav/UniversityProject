@@ -1,9 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "University.h"
 #include "Faculty.h"
 #include "Discipline.h"
 #include "Exam.h"
 #include "Stud_Zaochnik.h"
+#include "Journal.h"
+
 
 using namespace std;
 
@@ -139,6 +142,7 @@ int main()
 	lec2->SetMark(studentsPsychology[2], *exam_ukr, 2);
 	lec2->SetMark(studentsPsychology[2], *exam_anatomy, 2);
 
+	cout << "\n\n";
 	//посилання на похідні класи і застовсування віртуальної функції
 
 	//1st
@@ -158,7 +162,7 @@ int main()
 
 	f(*pointer);
 	f(students[1]);
-	f(*lec2);*/
+	f(*lec2);
 
 	//3d 
 
@@ -169,18 +173,39 @@ int main()
 	pointer->Work();
 	pointer = (Human*)&students[2];
 	cout << students[2].getName() << " is student of day form again" << endl;
-	pointer->Work();
+	pointer->Work();*/
 
-
+	Stud_Zaochnik newStud;
 	// operators overloading
 
 	++students[1];
 	--lec;
 	lec + *lec2;
+	students[0] - 20000;
+	students[0] * (students[0].marks);
+	newStud = studentsPsychology[1];
+	university += 750;
+	university -= 17;
+	students[0] *= 2;
+	students[0][1];
+
+	//Template function work
+
+	university.EntryToUniver(students[0].RatingMark, students[1].RatingMark);
+
+	//Template class work
+
+	Journal <int> journal(students[1], 4, 4, 4, 4);
+	journal.ShowJournal();
+	Journal <float> journal2(students[2], 4.5, 3.8, 5.0, 3.5);
+	journal2.ClearJournal();
+	journal2.ShowJournal();
+	Journal <char> journal3(students[3], 'A', 'B', 'A', 'D');
+	journal3.ShowJournal();
 	// перегляд результатів
 
-	students[0].SeeResults();
-	studentsPsychology[2].SeeResults();
+	//students[0].SeeResults();
+	//studentsPsychology[2].SeeResults();
 
 
 	// відрахування студентів
@@ -190,8 +215,8 @@ int main()
 
 
 	// список студентів, які відраховані
-	facultyIT.ShowDeductedStudents();
-	facultyPsychology->ShowDeductedStudents();
+	//facultyIT.ShowDeductedStudents();
+	//facultyPsychology->ShowDeductedStudents();
 
 	return 0;
 }

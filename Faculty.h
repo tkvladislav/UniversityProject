@@ -29,8 +29,6 @@ public:
 	string getName();
 	void Add(Lecturer &lecturer);
 	void Add(Student &student);
-	void PrintStudents();
-	void PrintLecturers();
 	void ShowDeductedStudents(); 
 	Student returnStudents(int i);
 };

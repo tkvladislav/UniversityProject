@@ -26,22 +26,21 @@ public:
 	Lecturer(string name);
 
 	void PrintInfo();
-	void StudentsList(Faculty& faculty);
 	void SetMark(Student& student,Exam &exam, int mark);
 	void DeductStudent(Student &student);
 	void Work();
 
 	Lecturer operator--() {
 		this->salary = salary - 5000;
-		return (*this);
 		cout << this->name << " salary was reduced" << endl;
+		return (*this);
 	}
 
 	Lecturer operator + (Lecturer &lec) {
 		Lecturer temp;
 		temp.salary = (this->salary + lec.salary) / 2;
-		return temp;
 		cout << "Medium salary is " << temp.salary << endl;
+		return temp;
 	}
 };
 
